@@ -22,12 +22,12 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
 const hasInvalidInput = (inputList) =>
   inputList.some((inputElement) => !inputElement.validity.valid);
 
-const disableSubmitButton = (buttonElement, settings) => {
+export const disableSubmitButton = (buttonElement, settings) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(settings.inactiveButtonClass);
 };
 
-const enableSubmitButton = (buttonElement, settings) => {
+export const enableSubmitButton = (buttonElement, settings) => {
   buttonElement.disabled = false;
   buttonElement.classList.remove(settings.inactiveButtonClass);
 };
