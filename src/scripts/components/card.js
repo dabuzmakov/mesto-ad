@@ -28,7 +28,6 @@ export const createCardElement = (
   const cardImage = cardElement.querySelector(".card__image");
   const likeCountElement = cardElement.querySelector(".card__like-count");
   
-
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardElement.querySelector(".card__title").textContent = data.name;
@@ -38,7 +37,7 @@ export const createCardElement = (
   toggleLike(likeButton, isLiked);
 
   likeButton.addEventListener("click", () => {
-    onLikeIcon(data, likeButton, likeCountElement);
+    onLikeIcon(data._id, likeButton, likeCountElement);
   });
 
   infoButton.addEventListener("click", () => {

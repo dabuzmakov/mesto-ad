@@ -134,12 +134,12 @@ const handleDeleteCard = (cardId, cardElement) => {
     });
 };
 
-const handleLikeCard = (card, likeButton, likeCountElement) => {
-  let isLiked = card.likes.some(user => user._id === userId);
-  changeLikeCardStatus(card._id, isLiked)
+const handleLikeCard = (cardId, likeButton, likeCountElement) => {
+  const isLiked = likeButton.classList.contains("card__like-button_is-active");
+  changeLikeCardStatus(cardId, isLiked)
     .then((updatedCard) => {
-      toggleLike(likeButton, !isLiked);
       likeCountElement.textContent = updatedCard.likes.length;
+      toggleLike(likeButton, !isLiked);
     })
     .catch((err) => {
       console.log(err);
